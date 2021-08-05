@@ -270,7 +270,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>靶场下载地址：<a href="http://vulnstack.qiyuanxuetang.net/vuln/detail/2/" target="_blank" rel="noopener">http://vulnstack.qiyuanxuetang.net/vuln/detail/2/</a><br>虚拟机密码：hongrisec@2019<br>1.环境搭建<br>三个靶机设置自定义网络（仅主机）<br>win7新建网卡和攻击机设置为net，如图<br><img src="1.png" alt="1.png"></p>
+        <p>靶场下载地址：<a href="http://vulnstack.qiyuanxuetang.net/vuln/detail/2/" target="_blank" rel="noopener">http://vulnstack.qiyuanxuetang.net/vuln/detail/2/</a><br>虚拟机密码：hongrisec@2019<br>1.环境搭建<br>三个靶机设置自定义网络（仅主机）<br>win7新建网卡和攻击机设置为net，如图<br><img src="1.png" alt="1.png"><br>在win7中启动phpstudy。<br>2.信息收集<br>nmap扫描网段探测存活主机，命令：nmap -sS -sV -O 192.168.1.0/24<br><img src="2.png" alt="2.png"><br>-sS:执行一次隐蔽的扫描<br>-sV:查找主机服务版本号<br>-O:启用Nmap的操作系统探测功能<br>通过nmap扫描可以看到我们要攻击的主机ip为192.168.1.132，开启了80和3306<br>用dirsearch扫描网站后台：sudo python3 dirsearch.py -u 192.168.1.132<br><img src="3.png" alt="3.png"><br>网站用了yxcms的建站模板，但是dirsearch没扫出来<br>用nikto扫描：nikto -host 192.168.1.132<br><img src="4.png" alt="4.png"></p>
 
       
       
